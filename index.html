@@ -1,79 +1,159 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kintsugui Studio</title>
-    <link rel="stylesheet" href="estilos.css" />
-</head>
-<body>
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #ddd;
+}
 
-    <!-- Encabezado -->
-   <header>
-    <img src="logo.png" alt="Logo Kintsugui Studio" class="logo" />
+/* HEADER */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
 
-    <!-- Botón Hamburguesa -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+.logo {
+    width: 220px;
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    transition: transform 0.4s ease;
+}
 
-    <!-- Menú -->
-    <nav id="menu">
-        <a href="#servicios">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-</header>
+.logo:hover {
+    transform: scale(1.07);
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+}
 
+/* NAV DESKTOP */
+nav {
+    display: flex;
+    gap: 20px;
+}
 
-    <!-- Hero -->
-    <section class="hero fade-in">
-        <h1>Kintsugui Studio</h1>
-        <p>Diseño gráfico y textil especializado en sublimación digital.</p>
-    </section>
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
 
-    <!-- Servicios -->
-    <section id="servicios" class="section fade-in">
-        <h2>Servicios</h2>
-        <div class="grid">
-            <div class="card">Sublimación digital textil</div>
-            <div class="card">Diseño gráfico personalizado</div>
-            <div class="card">Creación de plantillas y mockups</div>
-            <div class="card">Identidad visual y branding</div>
-            <div class="card">Diseño para productos personalizados</div>
-        </div>
-    </section>
+nav a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
 
-    <!-- Portafolio -->
-    <section id="portafolio" class="section fade-in">
-        <h2>Portafolio</h2>
-        <p>(Muy pronto… agrega aquí tus imágenes cuando las tengas)</p>
-        <div class="portafolio-grid"></div>
-    </section>
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
-        <!-- Contacto -->
-    <section id="contacto" class="section fade-in">
-        <h2>Contacto</h2>
-        <p>Para proyectos y consultas:</p>
-        <p>Email: <strong>kintsuguistudio23@gmail.com</strong></p>
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background: #fff;
+    transition: 0.3s;
+}
 
-        <div class="social">
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Facebook</a>
-        </div>
-    </section>
+/* MOBILE NAV MENU */
+#menu {
+    display: flex;
+    gap: 20px;
+}
 
-    <footer>
-        © 2024 Kintsugui Studio
-    </footer>
+@media (max-width: 768px) {
 
-    <script>
-    function toggleMenu() {
-        document.getElementById("menu").classList.toggle("open");
-        document.querySelector(".hamburger").classList.toggle("active");
+    /* Ocultar nav normal */
+    #menu {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: #000;
+        padding: 15px;
+        border-radius: 8px;
+        flex-direction: column;
+        display: none;
     }
-    </script>
-</body>
-</html>
+
+    #menu.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* SECTIONS */
+.section {
+    padding: 40px;
+}
+
+h1, h2 {
+    color: #eee;
+}
+
+p, li {
+    color: #bbb;
+}
+
+/* GRID SERVICIOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #333;
+}
+
+/* SOCIAL */
+.social a {
+    color: #ccc;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.social a:hover {
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #777;
+}
+
+/* ANIMACIÓN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
