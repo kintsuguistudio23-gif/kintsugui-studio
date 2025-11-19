@@ -68,9 +68,13 @@ nav a:hover {
 
 /* Logo suave */
 .logo {
+    width: 220px;   /* Aumenta aquí el tamaño: 200–250 */
+    height: auto;
+
     opacity: 0;
     animation: fadeIn 1.2s ease forwards;
 }
+
 
 /* Keyframes generales */
 @keyframes fadeIn {
