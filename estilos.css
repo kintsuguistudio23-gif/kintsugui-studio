@@ -18,11 +18,10 @@ header {
     z-index: 1000;
 }
 
-/* LOGO */
+/* LOGO (AJUSTADO) */
 .logo img {
-    width: 180px;
+    width: 140px;      /* tamaño perfecto */
     height: auto;
-    display: block;
 }
 
 /* NAV DESKTOP */
@@ -43,7 +42,7 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* HAMBURGER BUTTON */
+/* BOTÓN DE HAMBURGUESA */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -58,12 +57,13 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* MOBILE MENU */
+/* MENÚ MÓVIL */
 #menu {
     display: flex;
     gap: 20px;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -85,7 +85,7 @@ nav a:hover {
     }
 }
 
-/* SECTIONS */
+/* SECCIONES */
 .section {
     padding: 50px 30px;
 }
@@ -98,7 +98,7 @@ p, li {
     color: #bbb;
 }
 
-/* SOCIAL LINKS */
+/* ENLACES A REDES SOCIALES */
 .social a {
     color: #ccc;
     margin-right: 15px;
@@ -109,6 +109,15 @@ p, li {
     color: #fff;
 }
 
+/* EMAIL */
+.email {
+    color: #88c7ff;
+    text-decoration: none;
+}
+.email:hover {
+    color: #b8e1ff;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -117,7 +126,7 @@ footer {
     color: #777;
 }
 
-/* ANIMATION */
+/* ANIMACIÓN */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -130,4 +139,5 @@ footer {
         transform: translateY(0);
     }
 }
+
 
