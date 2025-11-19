@@ -1,87 +1,165 @@
-/* ============================
-   ESTILOS GENERALES
-============================ */
-body {
+/* ---------------------- */
+/* ESTILOS GENERALES */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #ddd;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-section {
-    padding: 40px;
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    line-height: 1.6;
 }
 
-h1, h2 {
-    color: #eee;
-}
-
-p, li {
-    color: #bbb;
-}
-
-/* ============================
-   HEADER / MENÚ
-============================ */
+/* ---------------------- */
+/* ENCABEZADO */
 header {
-    background-color: #000;
-    padding: 20px;
+    width: 100%;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 
+.logo {
+    height: 55px;
+}
+
+/* NAV */
 nav a {
-    color: #ccc;
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #444;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #fff;
-    transform: translateY(-3px);
+    color: #b48b55;
 }
 
-/* ============================
-   LOGO ANIMADO
-============================ */
-.logo {
-    width: 220px;        /* Ajusta aquí el tamaño */
-    height: auto;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-    transition: transform 0.4s ease, filter 0.4s ease;
+/* ---------------------- */
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("fondo.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: 70px;
 }
 
-.logo:hover {
-    transform: scale(1.07);
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+.hero h1 {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    color: #222;
 }
 
-/* ============================
-   ANIMACIONES
-============================ */
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* ---------------------- */
+/* SECCIONES */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #b48b55;
+}
+
+/* ---------------------- */
+/* CARDS DE SERVICIOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    font-weight: 600;
+    color: #444;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ---------------------- */
+/* PORTAFOLIO */
+.portafolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ---------------------- */
+/* CONTACTO */
+.social a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #b48b55;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------- */
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    color: white;
+    margin-top: 40px;
+}
+
+/* ---------------------- */
+/* ANIMACIÓN FADE-IN */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 1s ease-out forwards;
+    animation: fade 1s ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fade {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ============================
-   FOOTER
-============================ */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #777;
+/* ---------------------- */
+/* RESPONSIVE MENU (MÓVIL) */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
 }
+
