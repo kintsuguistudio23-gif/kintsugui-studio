@@ -9,14 +9,24 @@
 <body>
 
     <!-- Encabezado -->
-    <header>
-        <img src="logo.png" alt="Logo Kintsugui Studio" class="logo fade-in" />
-        <nav>
-            <a href="#servicios">Servicios</a>
-            <a href="#portafolio">Portafolio</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+   <header>
+    <img src="logo.png" alt="Logo Kintsugui Studio" class="logo" />
+
+    <!-- Botón Hamburguesa -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menú -->
+    <nav id="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
 
     <!-- Hero -->
     <section class="hero fade-in">
@@ -43,7 +53,7 @@
         <div class="portafolio-grid"></div>
     </section>
 
-    <!-- Contacto -->
+        <!-- Contacto -->
     <section id="contacto" class="section fade-in">
         <h2>Contacto</h2>
         <p>Para proyectos y consultas:</p>
@@ -59,6 +69,11 @@
         © 2024 Kintsugui Studio
     </footer>
 
+    <script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("open");
+        document.querySelector(".hamburger").classList.toggle("active");
+    }
+    </script>
 </body>
 </html>
-
