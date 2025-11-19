@@ -163,3 +163,113 @@ footer {
     }
 }
 
+/* ----- MENÚ RESPONSIVE ----- */
+
+/* Contenedor del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    width: 220px;
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.07);
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+}
+
+/* NAV normal (PC) */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ----- HAMBURGER BUTTON ----- */
+.hamburger {
+    width: 30px;
+    height: 22px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: #fff;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* ANIMACIÓN del ícono al abrir */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ----- MENÚ MÓVIL ----- */
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 180px;
+        flex-direction: column;
+        background: #111;
+        padding: 20px;
+        border-left: 1px solid #444;
+        border-bottom: 1px solid #444;
+        display: none;
+    }
+
+    nav.open {
+        display: flex;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
