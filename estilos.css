@@ -1,78 +1,68 @@
-/* GENERAL */
-nav {
-display: none;
-flex-direction: column;
-background-color: #000;
-position: absolute;
-right: 20px;
-top: 80px;
-padding: 15px;
-border-radius: 10px;
-gap: 15px;
-z-index: 9999; /* SOLUCIÓN: evita que se mezcle con el contenido */
+/* -------------------------
+   CONFIGURACIÓN GLOBAL
+--------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-nav.open {
-display: flex;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000;
 }
 
+/* -------------------------
+   NAVBAR
+--------------------------*/
 
-.hamburger {
-display: flex;
-}
-}
-
-
-/* SECCIONES */
-.section {
-padding: 60px 40px;
-}
-
-
-h1, h2 {
-color: #eee;
+header {
+    width: 100%;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-
-p, li {
-color: #bbb;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-/* REDES */
-.social a {
-color: #ccc;
-margin-right: 20px;
-text-decoration: none;
+/* LOGO RESPONSIVE */
+.logo {
+    height: 80px;   /* en PC */
+    width: auto;
 }
 
-
-.social a:hover {
-color: #fff;
+/* MENÚ */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
-
-/* FOOTER */
-footer {
-text-align: center;
-padding: 20px;
-background-color: #000;
-color: #777;
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
+/* -------------------------
+   VERSIÓN PARA CELULAR
+--------------------------*/
 
-/* ANIMACIÓN */
-.fade-in {
-opacity: 0;
-transform: translateY(20px);
-animation: fadeIn 1s ease-out forwards;
+@media (max-width: 768px) {
+    .logo {
+        height: 55px;
+        content: url("logo-small.png");  /* tu logo pequeño */
+    }
+
+    .menu {
+        gap: 15px;
+    }
 }
 
-
-@keyframes fadeIn {
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
